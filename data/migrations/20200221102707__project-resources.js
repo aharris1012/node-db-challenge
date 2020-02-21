@@ -1,7 +1,7 @@
 exports.up = function(knex) {
     return knex.schema
-      .createTable('project-resources', tbl => {
-          tbl.integer('projectid')
+      .createTable('project_resources', tbl => {
+          tbl.integer('project_id')
               .unsigned()
               .notNullable()
               .references('id')
@@ -15,11 +15,11 @@ exports.up = function(knex) {
               .inTable('resources')
               .onUpdate('CASCADE')
               .onDelete('CASCADE');
-          tbl.primary(['projectid', 'resource_id'])
+          tbl.primary(['project_id', 'resource_id'])
       })
   };
   
   exports.down = function(knex) {
-      return knex.schema.dropTableIfExists('project-resources');
+      return knex.schema.dropTableIfExists('project_resources');
     
   };

@@ -2,8 +2,8 @@ exports.up = function(knex) {
     return knex.schema
     .createTable('resources', tbl => {
         tbl.increments()
-        tbl.string('resourceName',128).notNullable
-        
+        tbl.string('resource_name',128).notNullable
+        tbl.string('description', 500)
     })
 };
 
