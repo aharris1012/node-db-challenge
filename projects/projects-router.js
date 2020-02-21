@@ -45,7 +45,7 @@ router.get('/resources', (req, res) => {
  });
 
  router.get('/',(req,res)=>{
-     Projects.find()
+     Projects.list()
      .then(projects =>{
          res.json(projects);
      })
