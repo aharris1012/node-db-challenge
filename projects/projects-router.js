@@ -7,7 +7,7 @@ const express = require("express");
  router.post('/', (req, res) => {
   const newProject = req.body;
 
-  Projects.create(newProject)
+  Projects.add(newProject)
   .then(project => {
     res.status(201).json(project);
   })
