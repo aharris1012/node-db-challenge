@@ -3,6 +3,6 @@ const ProjectRouter =require("./projects/projects-router");
 const server = express();
 
 server.use(express.json());
-server.use("/api/project", ProjectRouter);
+server.all("/api/project", ProjectRouter);
 
 module.exports = server;
