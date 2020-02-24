@@ -70,15 +70,7 @@ router.put('/:id', (req,res) => {
 router.delete('/:id', (req,res) => {
     Projects.deleteProject(req.params.id)
         .then(deleteCount => {
-            Projects.getProject(req.params.id)
-                .then(project => {
-                    res.status(200).json({
-                        message: `Successfully deleted project: ${project.name}.`
-                    })
-                })
-                .catch(err => {
-                    res.status(500).json({error: "Could not get project to delete."})
-                })
+            res.status(200).json({message: `Successfully deleted project`})
         })
         .catch(err => {
             res.status(500).json({error: "Could not delete project."})
