@@ -13,6 +13,7 @@ router.get('/', (req,res) => {
             res.status(500).json({error: "Could not get projects."})
         })
 })
+
 router.get('/:id', (req,res) => {
     Projects.getProject(req.params.id)
         .then(project => {
@@ -51,6 +52,7 @@ router.post('/', (req,res) => {
             res.status(500).json({error: "Could not add project."})
         })
 })
+
 router.put('/:id', (req,res) => {
     Projects.updateProject(req.body, req.params.id)
         .then(updatedCount => {
@@ -77,5 +79,4 @@ router.delete('/:id', (req,res) => {
         })
 })
 
-
-module.exports = router; 
+module.exports = router;

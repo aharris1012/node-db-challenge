@@ -29,7 +29,7 @@ router.post('/', (req,res) => {
             })
         })
         .catch(err => {
-            res.status(500).json({error: "Could not add task."})
+            res.status(500).json({error: "Could not add task."}, err)
         })
 })
 
